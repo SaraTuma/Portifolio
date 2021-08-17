@@ -1,5 +1,5 @@
 /*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 /*===== VARIABLES CSS =====*/
 :root{
   --header-height: 3rem;
@@ -14,10 +14,10 @@
 
 /*===== Fuente y tipografia =====*/
 :root{
-  --body-font: 'Poppins', sans-serif;
+  --body-font: roboto, sans-serif;
   --big-font-size: 1.5rem;
-  --h2-font-size: 1rem;
-  --normal-font-size: 0.938rem;
+  --h2-font-size: 2rem;
+  --normal-font-size: 0.9rem;
 }
 
 @media screen and (min-width: 768px){
@@ -82,6 +82,7 @@ img{
   font-size: var(--h2-font-size);
   color: var(--second-color);
   margin-top: var(--mb-2);
+  margin-bottom: 4rem;
   text-align: center;
 }
 .section-title::after{
@@ -371,11 +372,14 @@ img{
   width: 100%;
 }
 
+textarea{
+  font-family: roboto, sans-serif;
+}
+
 /* ===== FOOTER =====*/
 .footer{
   background-color: var(--second-color);
   color: #fff;
-  text-align: center;
   font-weight: var(--font-semi);
   padding: 1rem 0;
 }
@@ -390,6 +394,16 @@ img{
   font-size: 1.5rem;
   color: #fff;
   margin: 0 var(--mb-2)
+}
+.div_footer{
+  display: inline-block;
+  text-align: center;
+  height: auto;
+  background-color: red;
+}
+.last_footer{
+  width: 100%;
+  text-align: center;
 }
 
 /* ===== MEDIA QUERIES=====*/
