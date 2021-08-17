@@ -19,7 +19,7 @@ Made By: [Sara Tuma](https://github.com/SaraTuma)
 
 #Expectactiva ( O design )
 
-![O design do site] (./assets/img/Design-By-Creuma Kuzola.png)
+![O design do site](https://github.com/SaraTuma/Portifolio/blob/main/assets/img/Design-By-Creuma%20Kuzola.png)
 
 # Realidade
 
