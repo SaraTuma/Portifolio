@@ -79,10 +79,10 @@ img{
 /*===== CLASS CSS ===== */
 .section-title{
   position: relative;
-  font-size: var(--h2-font-size);
+  font-size: 1rem;
   color: var(--second-color);
-  margin-top: var(--mb-2);
-  margin-bottom: 4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
   text-align: center;
 }
 .section-title::after{
@@ -97,12 +97,16 @@ img{
 
 }
 .section{
+  padding: 1rem;
   padding-top: 3rem;
   padding-bottom: 2rem;
+
 }
 
 /*===== LAYOUT =====*/
+
 .bd-grid{
+
   max-width: 1024px;
   display: grid;
   grid-template-columns: 100%;
@@ -110,6 +114,7 @@ img{
   width: calc(100% - 2rem);
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
+
 }
 .l-header{
   width: 100%;
@@ -118,7 +123,6 @@ img{
   left: 0;
   z-index: var(--z-fixed);
   background-color: #fff;
-  box-shadow: 0 1px 4px rgba(146,161,176,.15);
 }
 
 /*===== NAV =====*/
@@ -143,10 +147,12 @@ img{
 }
 .nav__item{
   margin-bottom: var(--mb-4);
+  color: var(--second-color);
 }
 .nav__link{
   position: relative;
   color: #fff;
+  
 }
 .nav__link:hover{
   position: relative;
@@ -161,13 +167,14 @@ img{
   background-color: var(--first-color);
 }
 
+
 .nav__toggle{
   color: var(--first-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-/*Active menu*/
+/*=== Active menu ===*/
 .active::after{
   position: absolute;
   content: "";
@@ -178,7 +185,20 @@ img{
   background-color: var(--first-color);
 }
 
-/*=== Show menu ===*/
+.button-nav{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 5px;
+  border-radius: .3rem;
+}
+
+.button-nav:hover{
+  box-shadow: 0 12px 36px rgba(0,0,0,.15);
+  cursor: pointer;
+}
+
+/*==== Show menu ===*/
 .show{
   right: 0;
 }
@@ -218,7 +238,8 @@ img{
   width: 295px;
 }
 
-/*BUTTONS*/
+/*-------- BUTTONS ---------*/
+
 .button{
   display: inline-block;
   background-color: var(--first-color);
@@ -226,7 +247,7 @@ img{
   padding: .75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: .3rem;
-  margin: 1.5px;
+  margin: 1px;
 }
 .button:hover{
   box-shadow: 0 12px 36px rgba(0,0,0,.15);
@@ -252,6 +273,7 @@ img{
 .skills__container{
   row-gap: 2rem;
   text-align: center;
+  
 }
 
 .skills__text{
@@ -322,8 +344,13 @@ img{
 }
 
 /* ===== WORK =====*/
+.work{
+  background-color: whitesmoke;
+}
+
 .work__container{
   row-gap: 2rem;
+  
 }
 .work__img{
   box-shadow: 0 4px 25px rgba(14,36,49,.15);
@@ -382,28 +409,41 @@ textarea{
   color: #fff;
   font-weight: var(--font-semi);
   padding: 1rem 0;
+  text-align: center;
 }
+
 .footer__title{
-  font-size: 2rem;
-  margin-bottom: var(--mb-4);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  float: left;
+  left: 5px;
+  padding: 5px;
+  margin: 1rem;
 }
 .footer__social{
   margin-bottom: var(--mb-4);
+  float : right;
+  right: 10px;
+  padding: 10px;
+  margin: 1rem;
 }
 .footer__icon{
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff;
-  margin: 0 var(--mb-2)
+  margin: 0 var(--mb-2);
+ 
 }
 .div_footer{
   display: inline-block;
   text-align: center;
-  height: auto;
-  background-color: red;
+  width: 100%;
+  padding: 2px;
+}
+.div_inline{
+  display: inline-block;
 }
 .last_footer{
   width: 100%;
-  text-align: center;
 }
 
 /* ===== MEDIA QUERIES=====*/
@@ -412,15 +452,18 @@ textarea{
     margin: 0;
   }
   .section{
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
   .section-title{
-    margin-bottom: var(--mb-6);
+    margin-bottom: 1rem;
+    font-size: 1rem;
   }
+  
+  
   .section-title::after{
     width: 80px;
-    top: 3rem;
+    top: 2rem;
   }
 
   .nav{
@@ -481,14 +524,41 @@ textarea{
   .contact__container{
     justify-items: center;
   }
+  .div_footer{
+    padding: 1px;
+  }
+ 
 }
 
 @media screen and (min-width: 1024px){
+
   .bd-grid{
     margin-left: auto;
     margin-right: auto;
   }
   .home__img{
     right: 10%;
+  }
+  .footer__title{
+    font-size: 2rem;
+    margin-bottom: var(--mb-4);
+    float: left;
+    left: 10px;
+    padding: 10px;
+    margin: 1rem;
+  }
+  .section-title{
+    position: relative;
+    font-size: var(--h2-font-size);
+    color: var(--second-color);
+    margin-top: var(--mb-2);
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  .footer__icon{
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0 var(--mb-2);
+   
   }
 }
