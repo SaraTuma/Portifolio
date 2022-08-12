@@ -11,7 +11,10 @@
   --header-height: 3rem;
   --font-semi: 600;
 }
-
+body
+{
+  overflow-x: hidden;
+}
 /*===== Colores =====*/
 :root{
   --first-color: #6F34AD;
@@ -657,6 +660,10 @@ textarea{
   {
     display: block!important;
   }
+  .home
+  {
+    padding: 4rem 0 0;
+  }
   .about__container
   {
     text-align: center;
@@ -671,11 +678,24 @@ textarea{
   {
     margin: 0 auto;
   }
-
+  .home__img, .home__data
+  {
+    text-align: center;
+    position: relative;
+  }
+  .home
+  {
+    grid-template-columns: 1fr!important;
+    row-gap: 1rem;
+  }
+  .home__data p{
+    text-align: center;
+    font-size: 13pt;
+  }
 }
 
 @media(max-width: 468px) {
-  .skills__container
+  .skills__container,.work__container, .contact__container, .home
   {
     grid-template-columns: 1fr!important;
     row-gap: 1rem;
