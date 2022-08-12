@@ -1,11 +1,20 @@
 /*===== GOOGLE FONTS =====*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@font-face
+{
+  font-family: Roboto;
+  src: url("Roboto.ttf");
+}
 /*===== VARIABLES CSS =====*/
 :root{
   --header-height: 3rem;
   --font-semi: 600;
 }
-
+body
+{
+  overflow-x: hidden;
+}
 /*===== Colores =====*/
 :root{
   --first-color: #6F34AD;
@@ -107,9 +116,10 @@ img{
 
 .bd-grid{
 
-  max-width: 1024px;
+  max-width: 1200px;
   display: grid;
-  grid-template-columns: 100%;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 2rem;
   width: calc(100% - 2rem);
   margin-left: var(--mb-2);
@@ -121,10 +131,48 @@ img{
   position: fixed;
   top: 0;
   left: 0;
+  height: 80px;
+  padding: 1rem 0;
   z-index: var(--z-fixed);
   background-color: #fff;
 }
-
+.logo
+{
+  z-index: 1;
+  height: 20px;
+  width: 100px;
+  display: block;
+  position: relative;
+  object-fit: cover;
+}
+.nav__logo
+{
+  display: block;
+  position: relative;
+}
+.nav__logo::before
+{
+  left: 0px;
+  width: 5%;
+  z-index: -1;
+  content: " ";
+  position: absolute;
+  padding: 1rem 1.8rem;
+  background: var(--first-color);
+}
+.nav__logo h1
+{
+  top: 2px;
+  left: 10px;
+  color: #fff;
+  font-weight: 900;
+  position: relative;
+}
+.nav__logo h1 span
+{
+  padding: 0 .1rem;
+  color: var(--first-color);
+}
 /*===== NAV =====*/
 .nav{
   height: var(--header-height);
@@ -133,26 +181,31 @@ img{
   align-items: center;
   font-weight: var(--font-semi);
 }
+.nav__item .nav__link{
+  position: relative;
+  color: #000;
+}
 @media screen and (max-width: 768px){
   .nav__menu{
     position: fixed;
-    top: var(--header-height);
-    right: -100%;
+    top: 0px;
+    right: -10%;
     width: 80%;
     height: 100%;
     padding: 2rem;
     background-color: var(--second-color);
     transition: .5s;
   }
+  .nav__logo h1 span{
+    padding: 0 .4rem;
+  }
+  .nav__item .nav__link{
+    color: #fff;
+  }
 }
 .nav__item{
   margin-bottom: var(--mb-4);
   color: var(--second-color);
-}
-.nav__link{
-  position: relative;
-  color: #fff;
-  
 }
 .nav__link:hover{
   position: relative;
@@ -166,15 +219,30 @@ img{
   top: 2rem;
   background-color: var(--first-color);
 }
-
-
+.nav__link.button-nav
+{
+  color: #fff;
+  padding: .3rem 1.5rem;
+  background-color: var(--first-color);
+}
+.nav__link.button-nav.active
+{
+  color: #fff;
+}
 .nav__toggle{
+  z-index: 1;
   color: var(--first-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
 
 /*=== Active menu ===*/
+.nav__link.active
+{
+  color: #6F34AD;
+  font-weight: 900;
+  font-family: Roboto!important;
+}
 .active::after{
   position: absolute;
   content: "";
@@ -212,9 +280,19 @@ img{
   align-self: center;
   padding: 4px;
 }
+.home__data p{
+  font-size: 16pt;
+  word-spacing: 4px;
+  text-align: initial;
+  padding: .5rem 0 .8rem;
+  letter-spacing: 2.5px;
+}
+
+
+
 .home__title{
+  margin: 0px;
   font-size: var(--big-font-size);
-  margin-bottom: var(--mb-5);
 }
 .home__title-color{
   color: var(--first-color);
@@ -256,19 +334,47 @@ img{
 /* ===== ABOUT =====*/
 .about__container{
   row-gap: 2rem;
-  text-align: center;
+  text-align: left;
+  align-items: baseline!important;
+  grid-template-columns: .6fr 1fr!important;
 }
 .about__subtitle{
   margin-bottom: var(--mb-2);
 }
 .about__img{
-  justify-self: center;
-}
-.about__img img{
-  width: 200px;
+  width: 320px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  justify-self: flex-start;
   border-radius: .5rem;
 }
-
+.about__img img{
+  z-index: -2;
+  height: 100%;
+  width: 100%!important;
+  display: block;
+  object-fit: cover;
+  position: relative;
+}
+.about__img::after
+{
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  content: " ";
+  height: 100%;
+  width: inherit;
+  display: block;
+  position: absolute;
+  background: rgb(111, 52, 173, .4);
+}
+.about__text
+{
+  display: block;
+  font-size: 14pt;
+  padding: 0 0 1rem;
+}
 /* ===== SKILLS =====*/
 .skills__container{
   row-gap: 2rem;
@@ -366,7 +472,10 @@ img{
 }
 
 /* ===== CONTACT =====*/
-
+.contact h2
+{
+  margin-bottom: 1rem;
+}
 .contact__img{
   justify-self: center;
 }
@@ -376,19 +485,22 @@ img{
 
 .contact__input{
   width: 100%;
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-semi);
+  font-size: 12pt;
   padding: 1rem;
   outline: none;
   margin-bottom: 1rem;
   border: none;
-  color: var(--second-color);
+  color: #333;
+  font-weight: 600;
   background-color: #AEB5BB;
 }
 
 .contact__container{
   row-gap: 2rem;
+  margin-top: 3rem;
+  align-items: center; 
   text-align: center;
+  justify-items: right;
 }
 .contact__button{
   display: block;
@@ -408,17 +520,17 @@ textarea{
   background-color: var(--second-color);
   color: #fff;
   font-weight: var(--font-semi);
-  padding: 1rem 0;
+  padding: 0 0 1rem;
   text-align: center;
 }
 
 .footer__title{
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0px;
   float: left;
   left: 5px;
   padding: 5px;
-  margin: 1rem;
+  margin: 1rem 0 0;
 }
 .footer__social{
   margin-bottom: var(--mb-4);
@@ -438,12 +550,22 @@ textarea{
   text-align: center;
   width: 100%;
   padding: 2px;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #fff;
 }
 .div_inline{
   display: inline-block;
 }
 .last_footer{
   width: 100%;
+}
+.last_footer p
+{
+  margin: 0 0 .5rem;
+}
+.last_footer p a
+{
+  color: #fff;
 }
 
 /* ===== MEDIA QUERIES=====*/
@@ -472,6 +594,7 @@ textarea{
   .nav__list{
     display: flex;
     padding-top: 0;
+    align-items: center;
   }
   .nav__item{
     margin-left: var(--mb-6);
@@ -483,13 +606,15 @@ textarea{
   .nav__link{
     color: var(--first-color);
   }
+  .nav__link.a{
+    color: #fff!important;
+  }
+  
 
   .home{
     height: 100vh;
   }
-  .home__data{
-    align-self: flex-end;
-  }
+ 
   .home__social{
     padding-top: 0;
     padding-bottom: 2.5rem;
@@ -502,13 +627,13 @@ textarea{
   }
   .home__img{
     width: 457px;
-    bottom: 15%;
+    bottom: 25%;
   }
 
-  .about__container, .skills__container{
+  #about{
     grid-template-columns: repeat(2,1fr);
-    align-items: center;
     text-align: initial;
+    align-items: baseline;
   }
   .about__img img{
     width: 300px;
@@ -521,13 +646,64 @@ textarea{
   .contact__form{
     width: 360px;
   }
-  .contact__container{
-    justify-items: center;
-  }
+
   .div_footer{
     padding: 1px;
   }
  
+}
+@media(max-width: 768px) {
+  .nav__menu{
+    display: none!important;
+  }
+  .nav__menu.show
+  {
+    display: block!important;
+  }
+  .home
+  {
+    padding: 4rem 0 0;
+  }
+  .about__container
+  {
+    text-align: center;
+    justify-content: center;
+    grid-template-columns: 1fr!important;
+  }
+  .about h2
+  {
+    font-size: 18pt;
+  }
+  .about__container .about__img
+  {
+    margin: 0 auto;
+  }
+  .home__img, .home__data
+  {
+    text-align: center;
+    position: relative;
+  }
+  .home
+  {
+    grid-template-columns: 1fr!important;
+    row-gap: 1rem;
+  }
+  .home__data p{
+    text-align: center;
+    font-size: 13pt;
+  }
+}
+
+@media(max-width: 468px) {
+  .skills__container,.work__container, .contact__container, .home
+  {
+    grid-template-columns: 1fr!important;
+    row-gap: 1rem;
+  }
+  .skills__data
+  {
+    margin: 0px!important;
+  }
 }
 
 @media screen and (min-width: 1024px){
@@ -561,4 +737,11 @@ textarea{
     margin: 0 var(--mb-2);
    
   }
+}
+
+
+.about.section, .skills.section, .work.section, .contact.section
+{
+  display: block;
+  padding: 6rem 0;
 }
