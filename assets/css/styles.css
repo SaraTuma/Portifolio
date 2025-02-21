@@ -89,7 +89,7 @@ img{
 .section-title{
   position: relative;
   font-size: 1rem;
-  color: var(--second-color);
+  color: var(--first-color);
   margin-top: 0.5rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -104,12 +104,14 @@ img{
   margin: auto;
   top: 2rem;
 
+
 }
 .section{
   padding: 1rem;
   padding-top: 3rem;
   padding-bottom: 2rem;
-
+  /*height: 100vh;*/
+ 
 }
 
 /*===== LAYOUT =====*/
@@ -294,6 +296,11 @@ img{
   margin: 0px;
   font-size: var(--big-font-size);
 }
+
+.home__subtitle{
+  font-size: var(--h2-font-size);
+}
+
 .home__title-color{
   color: var(--first-color);
 }
@@ -334,12 +341,11 @@ img{
 /* ===== ABOUT =====*/
 .about__container{
   row-gap: 2rem;
-  text-align: left;
-  align-items: baseline!important;
-  grid-template-columns: .6fr 1fr!important;
+
 }
 .about__subtitle{
   margin-bottom: var(--mb-2);
+
 }
 .about__img{
   width: 320px;
@@ -379,7 +385,7 @@ img{
 .skills__container{
   row-gap: 2rem;
   text-align: center;
-  
+
 }
 
 .skills__text{
@@ -419,31 +425,34 @@ img{
   width: 100%;
 }
 .skills__html{
-  width: 85%;
+  width: 100%;
 }
 .skills__css{
-  width:50%;
+  width:90%;
 }
 .skills__js{
-  width: 40%;
+  width: 80%;
 }
 .skills__c{
   width: 100%;
 }
 
-.skills__python{
-  width: 25%;
+.skills__bt{
+  width: 70%;
 }
 
-.skills__angular{
-  width: 10%;
+.skills__react{
+  width: 50%;
 }
-.skills__java{
-  width: 55%;
+.skills__tailwind{
+  width: 80%;
 }
 
 .skills__node{
-  width: 40%;
+  width: 80%;
+}
+.skills__figma{
+  width: 70%;
 }
 .skills__img{
   border-radius: .5rem;
@@ -452,6 +461,7 @@ img{
 /* ===== WORK =====*/
 .work{
   background-color: whitesmoke;
+
 }
 
 .work__container{
@@ -470,6 +480,28 @@ img{
 .work__img img:hover{
   transform: scale(1.1);
 }
+
+.work_div{
+
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.work_button{
+  display: inline-block;
+  color: var(--first-color);
+  padding: .75rem 2.5rem;
+  font-weight: var(--font-semi);
+  border-radius: .3rem;
+  margin: 1px;
+  border: 1px var(--first-color) solid;
+}
+.work_button:hover{
+  box-shadow: 0 12px 36px rgba(0,0,0,.15);
+}
+
 
 /* ===== CONTACT =====*/
 .contact h2
@@ -578,8 +610,8 @@ textarea{
     padding-bottom: 2rem;
   }
   .section-title{
-    margin-bottom: 1rem;
     font-size: 1rem;
+    margin-bottom: 1rem;
   }
   
   
@@ -631,7 +663,7 @@ textarea{
   }
 
   #about{
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(1fr,1fr);
     text-align: initial;
     align-items: baseline;
   }
@@ -726,7 +758,6 @@ textarea{
   .section-title{
     position: relative;
     font-size: var(--h2-font-size);
-    color: var(--second-color);
     margin-top: var(--mb-2);
     margin-bottom: 4rem;
     text-align: center;
