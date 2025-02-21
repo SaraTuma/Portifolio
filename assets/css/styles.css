@@ -306,6 +306,7 @@ img{
 }
 .home__social{
   flex-direction: column;
+  align-self: flex-start;
 }
 .home__social-icon{
   width: max-content;
@@ -332,7 +333,6 @@ img{
   padding: .75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: .3rem;
-  margin: 1px;
 }
 .button:hover{
   box-shadow: 0 12px 36px rgba(0,0,0,.15);
@@ -374,6 +374,14 @@ img{
   display: block;
   position: absolute;
   background: rgb(111, 52, 173, .4);
+}
+
+.about__text_container{
+  height: 350px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
 }
 .about__text
 {
@@ -649,7 +657,7 @@ textarea{
  
   .home__social{
     padding-top: 0;
-    padding-bottom: 2.5rem;
+    margin-bottom: 10px;
     flex-direction: row;
     align-self: flex-end;
   }
